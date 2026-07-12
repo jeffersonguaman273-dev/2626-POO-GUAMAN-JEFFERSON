@@ -1,0 +1,220 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║           🎉 BIENVENIDO AL SISTEMA DE GESTIÓN DE RESTAURANTE 🍽️           ║
+║                                                                            ║
+║                    ACTIVIDAD SEMANA 7 - POO EN PYTHON                    ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+📍 TÚ ESTÁS EN:
+   c:\Users\USER\UEA\2626-POO-GUAMAN-JEFFERSON\PARCIAL1\SEMANA 7\restaurante_app\
+
+
+🚀 EMPIEZA AQUÍ (ELige una opción):
+
+   1️⃣  SOY ESTUDIANTE - Quiero probar el sistema AHORA
+       → Abre terminal aquí y ejecuta:
+          cd restaurante_app
+          python main.py
+       
+       ⏱️  Toma 2 minutos
+
+   2️⃣  SOY ESTUDIANTE - Quiero entender los conceptos OOP
+       → Abre el archivo: INICIO_RAPIDO.md
+       → Luego lee: GUIA_DIDACTICA.md
+       
+       ⏱️  Toma 1 hora
+
+   3️⃣  SOY DOCENTE - Quiero verificar el proyecto
+       → Lee: RESUMEN_EJECUTIVO.md (resumen)
+       → Abre: modelos/producto.py (código)
+       → Ejecuta: python main.py (prueba)
+       
+       ⏱️  Toma 30 minutos
+
+   4️⃣  Quiero ver EJEMPLOS automáticos
+       → Ejecuta:
+          python ejemplo_uso.py
+       
+       ⏱️  Toma 1 minuto
+
+
+📚 DOCUMENTACIÓN INCLUIDA:
+
+   📖 INDEX.md ..................... Guía de navegación (COMIENZA AQUÍ)
+   
+   🚀 INICIO_RAPIDO.md ............ Guía de 5 pasos (recomendado)
+   
+   🎓 GUIA_DIDACTICA.md ........... Explicación educativa de conceptos OOP
+   
+   📋 README.md ................... Guía completa del sistema
+   
+   📖 INSTRUCCIONES.txt ........... Manual de referencia y FAQ
+   
+   🏗️  ARQUITECTURA.md ............ Diagramas, flujos y estructura
+   
+   📊 RESUMEN_EJECUTIVO.md ....... Resumen del proyecto (para evaluadores)
+
+
+💾 ARCHIVOS DEL PROYECTO:
+
+   Python (7 archivos):
+   • modelos/producto.py ......... Clase Producto (constructor + @property/@setter)
+   • modelos/cliente.py .......... Clase Cliente (@dataclass)
+   • servicios/restaurante.py .... Clase Restaurante (CRUD)
+   • main.py ..................... Menú interactivo
+   • ejemplo_uso.py .............. 7 ejemplos automáticos
+   • modelos/__init__.py ......... Importaciones
+   • servicios/__init__.py ....... Importaciones
+
+   Documentación (7 archivos):
+   • INDEX.md, INICIO_RAPIDO.md, GUIA_DIDACTICA.md, README.md, INSTRUCCIONES.txt,
+     ARQUITECTURA.md, RESUMEN_EJECUTIVO.md
+
+
+🎓 CONCEPTOS OOP IMPLEMENTADOS:
+
+   ✅ Constructor tradicional (__init__)
+   ✅ Decoradores @property y @setter
+   ✅ Decorador @dataclass
+   ✅ Servicios (CRUD: Create, Read, Update, Delete)
+   ✅ Arquitectura modular por capas
+   ✅ Validación y encapsulación
+
+
+🎮 FUNCIONALIDADES:
+
+   ✓ Registrar, listar, buscar, eliminar productos
+   ✓ Registrar, listar, buscar, eliminar clientes
+   ✓ Menú interactivo con 10 opciones
+   ✓ Validaciones completas
+   ✓ Búsqueda flexible (nombre, ID, correo, categoría)
+   ✓ Estadísticas en tiempo real
+   ✓ 8 productos pre-cargados
+   ✓ 4 clientes pre-cargados
+
+
+⚡ INICIO RÁPIDO (30 segundos):
+
+   1. Abre terminal en esta carpeta (restaurante_app)
+   
+   2. Ejecuta:
+      python main.py
+   
+   3. Selecciona opción: 2 (para ver productos)
+   
+   4. Presiona Enter
+   
+   ¡Listo! Ya ves el sistema funcionando.
+
+
+❓ ¿CUÁL ARCHIVO DEBO LEER PRIMERO?
+
+   👤 Estudiante principiante ........... → INICIO_RAPIDO.md
+   🎓 Estudiante avanzado .............. → GUIA_DIDACTICA.md
+   👨‍💼 Docente/Evaluador ................. → RESUMEN_EJECUTIVO.md
+   🔧 Desarrollador ..................... → ARQUITECTURA.md
+   📖 Quiero todo ........................ → INDEX.md (tabla de contenidos)
+
+
+✅ ESTADO DEL PROYECTO:
+
+   ☑ Estructura modular: COMPLETADO
+   ☑ Código Python: 1,072 líneas
+   ☑ Documentación: 7 archivos
+   ☑ Ejemplos: 7 demostraciones
+   ☑ Pruebas: Verificadas sin errores
+   ☑ Requisitos: 100% cumplidos (24/24)
+
+
+🎯 QUÉ VAS A APRENDER:
+
+   • Cómo crear objetos con constructores validados
+   • Cómo controlar acceso a atributos con @property/@setter
+   • Cómo usar @dataclass para simplificar clases
+   • Cómo organizar código en capas (arquitectura modular)
+   • Cómo implementar CRUD (Create, Read, Update, Delete)
+   • Cómo validar entrada de usuario
+   • Cómo hacer aplicaciones escalables
+
+
+📚 RUTA DE APRENDIZAJE SUGERIDA:
+
+   DÍA 1 (1 hora):
+   • Lee: INICIO_RAPIDO.md
+   • Ejecuta: python main.py
+   • Explora: El menú interactivo
+
+   DÍA 2 (2 horas):
+   • Lee: GUIA_DIDACTICA.md
+   • Ejecuta: python ejemplo_uso.py
+   • Examina: modelos/producto.py
+
+   DÍA 3 (2 horas):
+   • Lee: ARQUITECTURA.md
+   • Abre: modelos/cliente.py
+   • Abre: servicios/restaurante.py
+
+   DÍA 4+ (Práctica):
+   • Modifica: El código
+   • Extiende: Agrega nuevas funciones
+   • Aprende: Haciendo cambios
+
+
+🔗 RELACIÓN ENTRE DOCUMENTOS:
+
+   START → INICIO_RAPIDO.md
+              ↓
+         ¿Entendiste?
+         SÍ → GUIA_DIDACTICA.md
+         NO → Ejecuta ejemplo_uso.py
+              ↓
+         ARQUITECTURA.md
+              ↓
+         Examina el código
+              ↓
+         Lee INSTRUCCIONES.txt para referencia
+
+
+💡 TIPS IMPORTANTES:
+
+   • No necesitas Python avanzado, este proyecto es didáctico
+   • No necesitas instalar librerías externas
+   • Puedes copiar/pegar código para aprender
+   • Los comentarios en el código te ayudarán mucho
+   • Los ejemplos están diseñados para ser claros
+   • No dudes en modificar y experimentar
+
+
+✨ CARACTERÍSTICAS ESPECIALES:
+
+   🎨 Interfaz amigable con emojis
+   ✅ Validación automática de entrada
+   🔍 Búsqueda flexible (no importa mayúsculas)
+   📊 Estadísticas en tiempo real
+   🎯 Código bien organizado y comentado
+   📚 Documentación triple (teoría, práctica, referencia)
+
+
+════════════════════════════════════════════════════════════════════════════
+
+        ¿LISTO PARA COMENZAR? 🚀
+
+   Opción A (RÁPIDO - 2 minutos):
+      python main.py
+
+   Opción B (EDUCATIVO - 30 minutos):
+      Abre: INICIO_RAPIDO.md
+
+   Opción C (COMPLETO - 2 horas):
+      Abre: INDEX.md
+
+════════════════════════════════════════════════════════════════════════════
+
+                    ¡QUE DISFRUTES APRENDIENDO POO! 🎓
+
+        Preguntas? Lee los archivos .md incluidos
+        ¡Todo está explicado de forma clara y didáctica!
+
+════════════════════════════════════════════════════════════════════════════

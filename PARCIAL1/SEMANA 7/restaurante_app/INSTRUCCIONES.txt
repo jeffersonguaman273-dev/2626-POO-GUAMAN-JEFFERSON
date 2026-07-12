@@ -1,0 +1,384 @@
+================================================================================
+        SISTEMA DE GESTIÓN DE RESTAURANTE - SEMANA 7
+        Programación Orientada a Objetos en Python
+================================================================================
+
+📁 ESTRUCTURA DEL PROYECTO
+================================================================================
+restaurante_app/
+├── modelos/
+│   ├── __init__.py
+│   ├── producto.py           ← Clase Producto (constructor + @property/@setter)
+│   └── cliente.py            ← Clase Cliente (@dataclass)
+│
+├── servicios/
+│   ├── __init__.py
+│   └── restaurante.py        ← Clase Restaurante (CRUD + servicios)
+│
+├── main.py                   ← Menú interactivo (punto de entrada)
+├── ejemplo_uso.py            ← Ejemplos de uso programático
+├── README.md                 ← Documentación completa
+├── GUIA_DIDACTICA.md         ← Guía educativa de conceptos OOP
+└── INSTRUCCIONES.txt         ← Este archivo
+
+
+🚀 CÓMO EJECUTAR
+================================================================================
+
+OPCIÓN 1: Menú Interactivo (Recomendado)
+-------------------------------------------
+Abre terminal en la carpeta restaurante_app y ejecuta:
+    
+    python main.py
+
+Esto mostrará un menú con 10 opciones para interactuar con el sistema.
+
+
+OPCIÓN 2: Ejemplos Automáticos
+-------------------------------
+Para ver ejemplos de todas las funcionalidades sin interacción:
+    
+    python ejemplo_uso.py
+
+Esto ejecutará 7 ejemplos demostrando cada concepto OOP.
+
+
+OPCIÓN 3: Python Interactivo
+------------------------------
+Para probar componentes individuales:
+    
+    python
+    >>> from modelos import Producto, Cliente
+    >>> from servicios import Restaurante
+    >>> prod = Producto("Pizza", "Platos", 14.50)
+    >>> print(prod.mostrar_informacion())
+    >>> exit()
+
+
+📚 COMPONENTES DEL SISTEMA
+================================================================================
+
+1. CLASE PRODUCTO (modelos/producto.py)
+   ─────────────────────────────────────
+   ✓ Constructor tradicional (__init__)
+   ✓ Atributos: nombre, categoría, precio, disponible
+   ✓ @property para leer atributos
+   ✓ @setter con validaciones:
+     - Nombre: no vacío
+     - Categoría: no vacía
+     - Precio: > 0 y numérico
+   ✓ Método mostrar_informacion()
+
+   Ejemplo:
+   >>> producto = Producto("Hamburguesa", "Platos", 12.99)
+   >>> print(producto.precio)
+   12.99
+   >>> producto.precio = -50  # Lanza ValueError
+   ❌ El precio debe ser mayor que cero
+
+
+2. CLASE CLIENTE (modelos/cliente.py)
+   ──────────────────────────────────
+   ✓ Utiliza decorador @dataclass
+   ✓ Atributos: nombre, correo, id_cliente
+   ✓ __post_init__() para validación adicional
+   ✓ Método mostrar_informacion()
+
+   Ejemplo:
+   >>> cliente = Cliente("Juan García", "juan@email.com", "CLI001")
+   >>> print(cliente)
+   Juan García (CLI001) - juan@email.com
+
+
+3. CLASE RESTAURANTE (servicios/restaurante.py)
+   ────────────────────────────────────────────
+   ✓ Maneja listas de productos y clientes
+   ✓ Métodos CRUD para productos:
+     - registrar_producto()
+     - listar_productos()
+     - buscar_producto_por_nombre()
+     - buscar_productos_por_categoría()
+     - actualizar_producto()
+     - eliminar_producto()
+   ✓ Métodos CRUD para clientes:
+     - registrar_cliente()
+     - listar_clientes()
+     - buscar_cliente_por_id()
+     - buscar_cliente_por_nombre()
+     - buscar_cliente_por_correo()
+     - eliminar_cliente()
+   ✓ Método obtener_estadísticas()
+
+   Ejemplo:
+   >>> restaurante = Restaurante("Mi Restaurante")
+   >>> restaurante.registrar_producto(producto)
+   True
+   >>> restaurante.listar_productos()
+   [Hamburguesa - $12.99, ...]
+
+
+🎮 MENÚ INTERACTIVO
+================================================================================
+
+Al ejecutar "python main.py" verás:
+
+    ==================================================
+            SISTEMA DE GESTIÓN DE RESTAURANTE
+    ==================================================
+    
+    📊 8 productos | 👥 4 clientes
+    
+    ==================================================
+                  MENÚ PRINCIPAL
+    ==================================================
+    
+    🍽️  PRODUCTOS:
+      1. Registrar producto
+      2. Listar productos
+      3. Buscar producto
+      4. Ver productos disponibles
+      5. Eliminar producto
+    
+    👥 CLIENTES:
+      6. Registrar cliente
+      7. Listar clientes
+      8. Buscar cliente
+      9. Eliminar cliente
+    
+    📊 INFORMACIÓN:
+      10. Ver estadísticas del restaurante
+    
+    --------------------------------------------------
+      0. Salir
+    ==================================================
+
+
+⚙️ VALIDACIONES IMPLEMENTADAS
+================================================================================
+
+PRODUCTO:
+  • Nombre: No puede estar vacío
+  • Categoría: No puede estar vacía  
+  • Precio: Debe ser mayor que cero
+  • Precio: Debe ser un número válido (int o float)
+  • Disponible: Debe ser booleano (True/False)
+
+CLIENTE:
+  • Nombre: No puede estar vacío
+  • Correo: No puede estar vacío
+  • ID: No puede estar vacío
+  • ID: Debe ser único en el sistema
+
+RESTAURANTE:
+  • Productos: No permite duplicados por nombre
+  • Clientes: No permite duplicados por ID
+  • Búsquedas: Insensibles a mayúsculas
+
+
+📊 DATOS DE EJEMPLO
+================================================================================
+
+El sistema carga automáticamente estos datos al iniciar:
+
+PRODUCTOS (8):
+  1. Hamburguesa Clásica (Platos Principales) - $12.99
+  2. Pizza Margherita (Platos Principales) - $14.50
+  3. Ensalada César (Ensaladas) - $8.99
+  4. Pasta Alfredo (Platos Principales) - $13.99
+  5. Café Espresso (Bebidas) - $3.50
+  6. Jugo Natural (Bebidas) - $5.99
+  7. Postre de Chocolate (Postres) - $7.99
+  8. Helado de Vainilla (Postres) - $4.99
+
+CLIENTES (4):
+  1. Juan García (CLI001) - juan.garcia@email.com
+  2. María López (CLI002) - maria.lopez@email.com
+  3. Carlos Martínez (CLI003) - carlos.martinez@email.com
+  4. Ana Rodríguez (CLI004) - ana.rodriguez@email.com
+
+
+🎓 CONCEPTOS OOP DEMOSTRADOS
+================================================================================
+
+✓ CONSTRUCTOR (__init__)
+  Inicializa objetos con datos validados
+  Uso: Producto(nombre, categoria, precio)
+
+✓ @PROPERTY y @SETTER
+  Controlan acceso a atributos privados con validación
+  Uso: producto.precio = 19.99
+
+✓ @DATACLASS
+  Genera automáticamente __init__ y otros métodos
+  Uso: @dataclass class Cliente
+
+✓ SERVICIOS (CAPA DE LÓGICA)
+  Centraliza operaciones CRUD
+  Uso: restaurante.registrar_producto(producto)
+
+✓ ARQUITECTURA MODULAR
+  Separación en capas: modelos, servicios, presentación
+  Uso: from modelos import Producto
+
+✓ VALIDACIÓN
+  Garantiza integridad de datos desde entrada
+  Uso: @setter con if/raise ValueError
+
+✓ ENCAPSULACIÓN
+  Atributos privados (_nombre) vs públicos (nombre)
+  Uso: self._precio en lugar de self.precio
+
+
+📝 FLUJO DE DATOS: ENTRADA → OBJETO → ALMACENAMIENTO → CONSULTA
+================================================================================
+
+1. input() del usuario
+   ↓
+2. Constructor crea objeto (valida con @setter)
+   ↓
+3. Objeto se registra en Restaurante (servicio)
+   ↓
+4. Se almacena en lista (self.productos o self.clientes)
+   ↓
+5. Se lista o busca mediante métodos del servicio
+
+
+❓ PREGUNTAS FRECUENTES
+================================================================================
+
+P: ¿Necesito instalar dependencias externas?
+R: No. Solo Python 3.7+ es necesario.
+
+P: ¿Puedo usar este sistema sin el menú?
+R: Sí. Usa "python ejemplo_uso.py" o importa los módulos en tu código.
+
+P: ¿Cómo agrego nuevos productos/clientes?
+R: En main.py, selecciona "1" (registrar) e ingresa los datos.
+
+P: ¿Los datos persisten después de cerrar el programa?
+R: No. Los datos están solo en memoria. Para persistencia, usa JSON/CSV/BD.
+
+P: ¿Cómo modifico un producto existente?
+R: Busca el producto, luego modifica sus atributos (usan @setter).
+
+P: ¿Puedo tener dos productos con el mismo nombre?
+R: No. El sistema evita duplicados por nombre.
+
+P: ¿Cómo me aseguro de que los datos sean válidos?
+R: El sistema valida automáticamente en constructores y setters.
+
+
+🔧 EJEMPLOS DE USO PRÁCTICO
+================================================================================
+
+CREAR PRODUCTO:
+    producto = Producto("Tacos", "Platos", 10.50)
+    restaurante.registrar_producto(producto)
+
+BUSCAR PRODUCTO:
+    pizza = restaurante.buscar_producto_por_nombre("Pizza")
+    if pizza:
+        print(pizza.mostrar_informacion())
+
+LISTAR PRODUCTOS:
+    for prod in restaurante.listar_productos():
+        print(f"{prod.nombre}: ${prod.precio}")
+
+CREAR CLIENTE:
+    cliente = Cliente("Pedro", "pedro@email.com", "CLI005")
+    restaurante.registrar_cliente(cliente)
+
+BUSCAR CLIENTE:
+    cliente = restaurante.buscar_cliente_por_id("CLI001")
+    if cliente:
+        print(cliente.mostrar_informacion())
+
+ESTADÍSTICAS:
+    stats = restaurante.obtener_estadisticas()
+    print(f"Precio promedio: ${stats['precio_promedio']:.2f}")
+
+
+📚 ARCHIVOS DE DOCUMENTACIÓN
+================================================================================
+
+README.md
+  • Descripción general del proyecto
+  • Estructura modular completa
+  • Guía de instalación y ejecución
+  • Requisitos cumplidos
+  • Notas didácticas
+
+GUIA_DIDACTICA.md
+  • Explicación detallada de cada concepto OOP
+  • Analogías del mundo real
+  • Ejemplos de código con explicaciones
+  • Diagrama de flujo de datos
+  • Preguntas de auto-evaluación
+
+ejemplo_uso.py
+  • 7 ejemplos que muestran cada funcionalidad
+  • Código ejecutable para entender el API
+  • Demostración de validaciones y casos edge
+  • Búsquedas avanzadas
+
+
+✅ CHECKLIST DE REQUISITOS
+================================================================================
+
+[✓] Estructura modular (modelos, servicios, main)
+[✓] Clase Producto con constructor (__init__)
+[✓] @property y @setter en Producto
+[✓] Validaciones en Producto (nombre, categoría, precio)
+[✓] Clase Cliente con @dataclass
+[✓] Clase Restaurante con CRUD
+[✓] Menú interactivo en main.py
+[✓] Datos de ejemplo pre-cargados
+[✓] Búsqueda flexible (por nombre, categoría, ID, correo)
+[✓] Nombres descriptivos en snake_case
+[✓] Comentarios explicativos
+[✓] Sin código quemado (todo basado en entrada)
+[✓] Importaciones correctas
+[✓] Archivos __init__.py en carpetas
+[✓] Documentación completa y didáctica
+
+
+🎯 PRÓXIMOS PASOS (Extensiones Sugeridas)
+================================================================================
+
+1. Guardar datos en JSON:
+   - Agregar métodos para guardar/cargar desde archivo
+
+2. Agregar órdenes:
+   - Crear clase Orden que relacione Clientes con Productos
+
+3. Sistema de inventario:
+   - Agregar cantidad disponible a Productos
+   - Actualizar al crear órdenes
+
+4. Interface gráfica:
+   - Usar tkinter o PySimpleGUI para versión visual
+
+5. Base de datos:
+   - Migrar datos a SQLite o PostgreSQL
+
+6. Tests unitarios:
+   - pytest para automatizar pruebas
+   - Validar cada método de las clases
+
+
+📞 SOPORTE
+================================================================================
+
+Si encuentras errores o tienes dudas:
+
+1. Revisa GUIA_DIDACTICA.md para conceptos
+2. Ejecuta ejemplo_uso.py para ver cómo funciona cada parte
+3. Lee los comentarios en el código fuente
+4. Prueba con "python -i main.py" para debugging interactivo
+
+
+================================================================================
+                    ¡Éxito en tu aprendizaje de POO!
+================================================================================
+
+Desenvolvido con 💙 para la SEMANA 7 de Programación Orientada a Objetos
