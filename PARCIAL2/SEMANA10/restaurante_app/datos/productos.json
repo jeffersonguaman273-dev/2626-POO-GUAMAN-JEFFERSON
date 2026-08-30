@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "codigo": "5",
+    "nombre": "PAN",
+    "categoria": "HARINA",
+    "precio": 2.0
+  }
+]
