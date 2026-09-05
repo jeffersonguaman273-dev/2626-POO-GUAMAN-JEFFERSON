@@ -1,0 +1,23 @@
+[
+  {
+    "codigo": "P001",
+    "nombre": "Ceviche",
+    "categoria": "Platos",
+    "precio": 18.5,
+    "stock": 9
+  },
+  {
+    "codigo": "P002",
+    "nombre": "Limonada",
+    "categoria": "Bebidas",
+    "precio": 5.0,
+    "stock": 20
+  },
+  {
+    "codigo": "12",
+    "nombre": "Tallarin",
+    "categoria": "Pasta",
+    "precio": 5.0,
+    "stock": 3
+  }
+]
