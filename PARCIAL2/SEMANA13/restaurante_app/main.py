@@ -2,8 +2,8 @@ import os
 import tkinter as tk
 from tkinter import ttk
 
-from servicios.archivo_servicio import ArchivoServicio
-from servicios.restaurante_servicio import RestauranteServicio
+from PARCIAL2.SEMANA13.restaurante_app.servicios.archivo_servicio import ArchivoServicio
+from PARCIAL2.SEMANA13.restaurante_app.servicios.restaurante_servicio import RestauranteServicio
 from ui.login_view import LoginView
 from ui.main_view import MainView
 
