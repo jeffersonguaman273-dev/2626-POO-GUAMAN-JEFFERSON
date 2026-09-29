@@ -1,0 +1,1 @@
+Carpeta assets: coloque aquí los iconos y el logotipo del sistema (PNG/SVG).\nRequisito de la Semana 15: incluir iconos y logo en la interfaz.
